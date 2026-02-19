@@ -20,8 +20,7 @@ class NewsApi {
     const from = new Date(today.getTime() - SEARCH_DAYS_BACK * 24 * 60 * 60 * 1000);
 
     return fetch(
-      `${this._baseUrl}/everything?q=${encodeURIComponent(keyword)}&from=${from.toISOString()}&to=${today.toISOString()}&pageSize=${API_PAGE_SIZE}`,
-      { headers: this._apiKey ? { 'X-Api-Key': this._apiKey } : {} }
+      `${this._baseUrl}/everything?q=${encodeURIComponent(keyword)}&from=${from.toISOString()}&to=${today.toISOString()}&pageSize=${API_PAGE_SIZE}&apiKey=${this._apiKey}`
     )
       .then((res) => this._checkResponse(res))
       .catch((err) => {

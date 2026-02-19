@@ -64,7 +64,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/news-explorer-frontend">
       <Switch>
         <Route exact path="/">
           <Header theme="dark" />

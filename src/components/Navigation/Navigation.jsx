@@ -7,7 +7,7 @@ function Navigation({ theme }) {
       <ul className="navigation__list">
         <li className="navigation__item">
           <NavLink exact to="/" className={`navigation__link navigation__link_theme_${theme}`} activeClassName="navigation__link_active">
-            Inicio
+            Início
           </NavLink>
         </li>
         <li className="navigation__item">

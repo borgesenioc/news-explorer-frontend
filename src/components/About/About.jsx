@@ -12,7 +12,7 @@ function About() {
         ) : (
           <img
             className="about__image"
-            src="/enio-profile2.jpg"
+            src={`${import.meta.env.BASE_URL}enio-profile2.jpg`}
             alt="Foto do autor"
             onError={() => setImgError(true)}
           />
