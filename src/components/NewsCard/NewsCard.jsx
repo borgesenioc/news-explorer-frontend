@@ -1,6 +1,6 @@
 import './NewsCard.css';
 
-function NewsCard({ card }) {
+function NewsCard({ card, isSaved, onSave }) {
   function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-BR', {
@@ -30,7 +30,14 @@ function NewsCard({ card }) {
           <p className="card__source">{card.source?.name}</p>
         </div>
       </a>
-
+      <button
+        className="card__save"
+        type="button"
+        onClick={() => onSave(card)}
+        aria-label={isSaved ? 'Remover dos salvos' : 'Salvar artigo'}
+      >
+        <span className={`card__save-icon${isSaved ? ' card__save-icon--saved' : ''}`} />
+      </button>
     </article>
   );
 }

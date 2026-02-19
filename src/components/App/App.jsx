@@ -13,14 +13,17 @@ function App() {
   const [searchError, setSearchError] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
   const [displayedCount, setDisplayedCount] = useState(3);
+  const [savedArticles, setSavedArticles] = useState([]);
 
-  // Carrega resultados salvos ao iniciar
+  // Carrega resultados e salvos ao iniciar
   useEffect(() => {
     const saved = localStorage.getItem('articles');
     if (saved) {
       setArticles(JSON.parse(saved));
       setHasSearched(true);
     }
+    const bookmarked = localStorage.getItem('savedArticles');
+    if (bookmarked) setSavedArticles(JSON.parse(bookmarked));
   }, []);
 
   function handleSearch(keyword) {
@@ -47,6 +50,15 @@ function App() {
       });
   }
 
+  function handleSave(article) {
+    setSavedArticles((prev) => {
+      const already = prev.some((a) => a.url === article.url);
+      const next = already ? prev.filter((a) => a.url !== article.url) : [...prev, article];
+      localStorage.setItem('savedArticles', JSON.stringify(next));
+      return next;
+    });
+  }
+
   function handleShowMore() {
     setDisplayedCount((prev) => prev + 3);
   }
@@ -65,11 +77,13 @@ function App() {
             hasSearched={hasSearched}
             onSearch={handleSearch}
             onShowMore={handleShowMore}
+            savedArticles={savedArticles}
+            onSave={handleSave}
           />
         </Route>
         <Route path="/saved-news">
           <Header theme="light" />
-          <SavedNews savedArticles={[]} />
+          <SavedNews savedArticles={savedArticles} onSave={handleSave} />
         </Route>
       </Switch>
       <Footer />

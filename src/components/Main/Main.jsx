@@ -13,6 +13,8 @@ function Main({
   hasSearched,
   onSearch,
   onShowMore,
+  savedArticles,
+  onSave,
 }) {
   return (
     <main className="main">
@@ -41,6 +43,8 @@ function Main({
           totalArticles={totalArticles}
           displayedCount={displayedCount}
           onShowMore={onShowMore}
+          savedArticles={savedArticles}
+          onSave={onSave}
         />
       )}
 
