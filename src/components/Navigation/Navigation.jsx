@@ -16,9 +16,7 @@ function Navigation({ theme }) {
           </NavLink>
         </li>
       </ul>
-      <button className={`navigation__signin navigation__signin_theme_${theme}`}>
-        Entrar
-      </button>
+
     </nav>
   );
 }
