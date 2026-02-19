@@ -11,9 +11,9 @@ function SearchForm({ onSearch }) {
   return (
     <section className="search-form">
       <div className="search-form__container">
-        <h1 className="search-form__title">O que esta acontecendo no mundo?</h1>
+        <h1 className="search-form__title">O que está acontecendo no mundo?</h1>
         <p className="search-form__subtitle">
-          Encontre as ultimas noticias sobre qualquer tema e salve-as na sua conta pessoal.
+          Encontre as últimas notícias sobre qualquer tema e salve-as na sua conta pessoal.
         </p>
         <form className="search-form__form" onSubmit={handleSubmit} noValidate>
           <input

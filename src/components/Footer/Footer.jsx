@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__container">
         <p className="footer__copyright">
-          &copy; 2024 NewsExplorer, desenvolvido por Enio Borges
+          &copy; {new Date().getFullYear()} NewsExplorer, por Enio Borges
         </p>
         <ul className="footer__links">
           <li className="footer__item">

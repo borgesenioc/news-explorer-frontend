@@ -30,7 +30,7 @@ function Main({
         <div className="main__status">
           <p className="main__status-title">Nada encontrado</p>
           <p className="main__status-text">
-            Desculpe, nao encontramos noticias com esse tema. Tente uma palavra-chave diferente.
+            Desculpe, não encontramos notícias com esse tema. Tente uma palavra-chave diferente.
           </p>
         </div>
       )}

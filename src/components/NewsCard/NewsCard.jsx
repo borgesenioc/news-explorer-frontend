@@ -30,7 +30,7 @@ function NewsCard({ card }) {
           <p className="card__source">{card.source.name}</p>
         </div>
       </a>
-      <button className="card__save" type="button" title="Faca o login para salvar os artigos">
+      <button className="card__save" type="button" title="Faça o login para salvar os artigos">
         <span className="card__save-icon" />
       </button>
     </article>

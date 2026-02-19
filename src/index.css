@@ -86,7 +86,8 @@
   --transition: 0.3s ease;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
@@ -94,8 +95,13 @@ body {
   font-family: var(--font-roboto);
   background-color: var(--color-bg);
   color: var(--color-primary);
-  min-height: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 img {
