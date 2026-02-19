@@ -1,6 +1,6 @@
 import './SearchForm.css';
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSearch = () => {} }) {
   function handleSubmit(e) {
     e.preventDefault();
     const keyword = e.target.keyword.value.trim();
@@ -16,7 +16,9 @@ function SearchForm({ onSearch }) {
           Encontre as últimas notícias sobre qualquer tema e salve-as na sua conta pessoal.
         </p>
         <form className="search-form__form" onSubmit={handleSubmit} noValidate>
+          <label htmlFor="keyword" className="sr-only">Buscar notícias</label>
           <input
+            id="keyword"
             className="search-form__input"
             type="text"
             name="keyword"

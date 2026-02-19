@@ -8,7 +8,7 @@ function About() {
     <section className="about">
       <div className="about__container">
         {imgError ? (
-          <div className="about__image-placeholder" />
+          <div className="about__image-placeholder" aria-hidden="true" />
         ) : (
           <img
             className="about__image"

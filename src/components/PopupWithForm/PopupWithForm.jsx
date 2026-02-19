@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useId } from 'react';
 import './PopupWithForm.css';
 
 function PopupWithForm({ isOpen, onClose, title, children }) {
+  const titleId = useId();
+
   // Fecha com ESC
   useEffect(() => {
     if (!isOpen) return;
@@ -22,10 +24,11 @@ function PopupWithForm({ isOpen, onClose, title, children }) {
     <div
       className={`popup ${isOpen ? 'popup_opened' : ''}`}
       onClick={handleOverlayClick}
+      aria-hidden={!isOpen}
     >
-      <div className="popup__container">
-        <button className="popup__close" type="button" onClick={onClose} />
-        <h3 className="popup__title">{title}</h3>
+      <div className="popup__container" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+        <button className="popup__close" type="button" onClick={onClose} aria-label="Fechar" />
+        <h3 className="popup__title" id={titleId}>{title}</h3>
         {children}
       </div>
     </div>

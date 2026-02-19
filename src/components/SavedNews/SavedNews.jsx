@@ -2,7 +2,7 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import './SavedNews.css';
 
-function SavedNews({ savedArticles }) {
+function SavedNews({ savedArticles = [] }) {
   return (
     <main className="saved-news">
       <SavedNewsHeader savedCount={savedArticles.length} />

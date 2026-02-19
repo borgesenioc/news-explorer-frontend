@@ -28,3 +28,9 @@
   font-weight: 400;
   color: #b6bcbf;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__circle {
+    animation: none;
+  }
+}

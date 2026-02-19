@@ -1,33 +1,37 @@
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   src: url('./vendor/fonts/roboto-400-regular.woff2') format('woff2'),
        url('./vendor/fonts/roboto-400-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   src: url('./vendor/fonts/roboto-500.woff2') format('woff2'),
        url('./vendor/fonts/roboto-500.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   src: url('./vendor/fonts/roboto-700.woff2') format('woff2'),
        url('./vendor/fonts/roboto-700.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: Roboto;
   src: url('./vendor/fonts/roboto-900.woff2') format('woff2'),
        url('./vendor/fonts/roboto-900.woff') format('woff');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
        url('./vendor/fonts/roboto-slab-400-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -44,22 +49,25 @@
        url('./vendor/fonts/roboto-slab-700.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('./vendor/fonts/inter-400-regular.woff2') format('woff2'),
        url('./vendor/fonts/inter-400-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('./vendor/fonts/inter-500.woff2') format('woff2'),
        url('./vendor/fonts/inter-500.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 *,
@@ -79,9 +87,9 @@
   --color-text-secondary: #b6bcbf;
   --color-border: #d0d5dd;
 
-  --font-roboto: 'Roboto', Arial, sans-serif;
-  --font-roboto-slab: 'Roboto Slab', Georgia, serif;
-  --font-inter: 'Inter', Arial, sans-serif;
+  --font-roboto: Roboto, arial, sans-serif;
+  --font-roboto-slab: 'Roboto Slab', georgia, serif;
+  --font-inter: Inter, arial, sans-serif;
 
   --transition: 0.3s ease;
 }
@@ -123,4 +131,16 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
