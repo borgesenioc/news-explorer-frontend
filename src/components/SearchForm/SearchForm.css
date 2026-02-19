@@ -64,6 +64,7 @@
 .search-form__button {
   padding: 0 56px;
   height: 64px;
+  border: none;
   background-color: var(--color-accent);
   color: var(--color-white);
   font-family: var(--font-roboto);

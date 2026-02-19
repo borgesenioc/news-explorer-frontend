@@ -8,10 +8,14 @@ class NewsApi {
 
   _checkResponse(res) {
     if (res.ok) return res.json();
-    return Promise.reject(`Erro: ${res.status}`);
+    return Promise.reject(new Error(`Error: ${res.status}`));
   }
 
   searchNews(keyword) {
+    if (!keyword || !keyword.trim()) {
+      return Promise.reject(new Error('Search keyword must not be empty'));
+    }
+
     const today = new Date();
     const from = new Date(today.getTime() - SEARCH_DAYS_BACK * 24 * 60 * 60 * 1000);
 
@@ -19,7 +23,7 @@ class NewsApi {
       `${this._baseUrl}/everything?q=${encodeURIComponent(keyword)}&from=${from.toISOString()}&to=${today.toISOString()}&pageSize=${API_PAGE_SIZE}`,
       { headers: this._apiKey ? { 'X-Api-Key': this._apiKey } : {} }
     )
-      .then(this._checkResponse)
+      .then((res) => this._checkResponse(res))
       .catch((err) => {
         console.error(err);
         throw err;

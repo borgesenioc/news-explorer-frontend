@@ -1,15 +1,15 @@
 import './NewsCard.css';
 
-function NewsCard({ card, isSaved, onSave }) {
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-BR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  }
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 
+function NewsCard({ card, isSaved, onSave }) {
   return (
     <article className="card">
       <a

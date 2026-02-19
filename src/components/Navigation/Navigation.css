@@ -27,7 +27,7 @@
 }
 
 .navigation__link_active {
-  border-bottom: 2px solid currentColor;
+  border-bottom: 2px solid currentcolor;
   padding-bottom: 2px;
 }
 
